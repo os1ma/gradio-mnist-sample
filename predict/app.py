@@ -4,6 +4,9 @@ import onnxruntime
 
 
 def predict(image):
+    if image is None:
+        return None
+
     # 2次元配列を1次元に変換
     reshaped_arr = image.reshape(-1)
     # ONNX Runtimeへの入力形式に変換
@@ -24,7 +27,7 @@ def predict(image):
     return label
 
 
-app = gr.Interface(title="手書き数字推論サンプルアプリ", fn=predict, inputs="sketchpad", outputs="label",
+app = gr.Interface(title="Handwritten Number Prediction", fn=predict, inputs="sketchpad", outputs="label", live=True,
                    allow_flagging="never", css=".gradio-container { max-width: 800px; margin: 0 auto; }")
 
 app.launch()
