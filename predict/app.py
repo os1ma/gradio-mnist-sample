@@ -4,29 +4,25 @@ import onnxruntime
 
 
 def predict(image):
+    # 2次元配列を1次元に変換
     reshaped_arr = image.reshape(-1)
-    print("reshaped_arr")
-    print(reshaped_arr)
-
+    # ONNX Runtimeへの入力形式に変換
     input = [reshaped_arr.astype(numpy.float32)]
-    print("input")
-    print(input)
 
-    # predict
-
+    # モデルの読み込み
     onnx_session = onnxruntime.InferenceSession("../train/model.onnx")
-
+    # 推論
     output = onnx_session.run(['probabilities'], {'float_input': input})
-    print("output")
-    print(output)
 
-    result = output[0][0]
-    print("result")
-    print(result)
+    # 確率の配列を取り出し
+    probabilities = output[0][0]
+    # Dictに変換
+    label = {}
+    for i, probability in enumerate(probabilities.tolist()):
+        label[i] = probability
 
-    name = "world"
-    return "Hello " + name + "!"
+    return label
 
-demo = gr.Interface(fn=predict, inputs="sketchpad", outputs="text")
+app = gr.Interface(fn=predict, inputs="sketchpad", outputs="label")
 
-demo.launch()
+app.launch()
