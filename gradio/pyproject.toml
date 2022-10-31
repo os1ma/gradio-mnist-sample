@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "gradio"
+version = "0.1.0"
+description = ""
+authors = ["Yuki Oshima <39944763+os1ma@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "3.9.13"
+onnxruntime = "1.12.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
