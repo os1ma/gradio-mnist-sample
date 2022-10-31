@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "train"
+version = "0.1.0"
+description = ""
+authors = ["Yuki Oshima <39944763+os1ma@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "3.9.13"
+scikit-learn = "1.1.2"
+skl2onnx = "1.12"
+packaging = "21.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
