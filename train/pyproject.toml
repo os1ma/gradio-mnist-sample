@@ -11,6 +11,7 @@ skl2onnx = "1.12"
 packaging = "21.3"
 
 [tool.poetry.dev-dependencies]
+autopep8 = "^2.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

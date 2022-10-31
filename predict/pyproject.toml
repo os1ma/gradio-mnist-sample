@@ -10,6 +10,7 @@ onnxruntime = "1.12.1"
 gradio = "^3.8.1"
 
 [tool.poetry.dev-dependencies]
+autopep8 = "^2.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -23,6 +23,8 @@ def predict(image):
 
     return label
 
-app = gr.Interface(title="手書き数字推論サンプルアプリ", fn=predict, inputs="sketchpad", outputs="label", allow_flagging="never", css=".gradio-container { max-width: 800px; margin: 0 auto; }")
+
+app = gr.Interface(title="手書き数字推論サンプルアプリ", fn=predict, inputs="sketchpad", outputs="label",
+                   allow_flagging="never", css=".gradio-container { max-width: 800px; margin: 0 auto; }")
 
 app.launch()
