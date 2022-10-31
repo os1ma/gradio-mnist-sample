@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "gradio"
+name = "predict"
 version = "0.1.0"
 description = ""
 authors = ["Yuki Oshima <39944763+os1ma@users.noreply.github.com>"]
@@ -7,6 +7,7 @@ authors = ["Yuki Oshima <39944763+os1ma@users.noreply.github.com>"]
 [tool.poetry.dependencies]
 python = "3.9.13"
 onnxruntime = "1.12.1"
+gradio = "^3.8.1"
 
 [tool.poetry.dev-dependencies]
 
