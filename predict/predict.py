@@ -44,5 +44,13 @@ if __name__ == '__main__':
 
     input = preprocess(pil_image)
 
+    print("=== input ===")
+    for i in input:
+        for j in i:
+            print(f"%3d " % j, end="")
+        print()
+
     result = predict(input)
+
+    print("=== result ===")
     print(result)
