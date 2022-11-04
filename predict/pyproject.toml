@@ -8,6 +8,7 @@ authors = ["Yuki Oshima <39944763+os1ma@users.noreply.github.com>"]
 python = "3.9.13"
 onnxruntime = "1.12.1"
 gradio = "^3.8.1"
+Pillow = "9.2.0"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^2.0.0"

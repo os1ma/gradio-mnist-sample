@@ -1,6 +1,18 @@
-import gradio as gr
 import numpy
 import onnxruntime
+from PIL import Image
+
+
+def preprocess(pil_image):
+    # 画像を28*28のサイズに変換
+    resized_image = pil_image.resize((28, 28))
+    resized_arr = numpy.array(resized_image)
+
+    # Alpha成分だけを抽出
+    transposed_arr = resized_arr.transpose(2, 0, 1)
+    alpha_arr = transposed_arr[3]
+
+    return alpha_arr
 
 
 def predict(image):
@@ -27,7 +39,10 @@ def predict(image):
     return result
 
 
-app = gr.Interface(title="Handwritten Number Prediction", fn=predict, inputs="sketchpad", outputs="label", live=True,
-                   allow_flagging="never", css=".gradio-container { max-width: 800px; margin: 0 auto; }")
+if __name__ == '__main__':
+    pil_image = Image.open('sample.png')
 
-app.launch()
+    input = preprocess(pil_image)
+
+    result = predict(input)
+    print(result)
