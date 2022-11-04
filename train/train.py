@@ -13,8 +13,8 @@ X, y = fetch_openml(
     "mnist_784", version=1, return_X_y=True, as_frame=False)
 print("Fetch OpenML completed")
 
-X = X[:700]
-y = y[:700]
+#X = X[:700]
+#y = y[:700]
 print(f"len(X) = {len(X)}, len(y) = {len(y)}")
 
 # train
